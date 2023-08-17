@@ -32,11 +32,6 @@ class ProfileController extends Controller
         public function profileFormateur()
         {
 
-
-        
-
-
-
             return view('profiledashboard.profiles.formateur', [
                 'profileFormateur' => $this->teacherService->profileFormateur()
             ]);

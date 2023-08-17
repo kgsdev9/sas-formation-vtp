@@ -41,7 +41,7 @@ class RegisterController extends Controller
     {
 
     $data =$userService->createUsser($request->all());
-    NewsUserNotificationAdminJob::dispatch($data);
+    // NewsUserNotificationAdminJob::dispatch($data);
     return redirect()->route('register.sucess', $data['name']);
     }
 
