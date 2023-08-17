@@ -171,6 +171,7 @@ return [
         Jorenvh\Share\Providers\ShareServiceProvider::class,
         MercurySeries\Flashy\FlashyServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        MercurySeries\Flashy\FlashyServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -188,7 +189,8 @@ return [
         // 'Example' => App\Facades\Example::class,
         'Share' => Jorenvh\Share\ShareFacade::class,
         'Flashy' => MercurySeries\Flashy\Flashy::class,
-        'Image' => 'Intervention\Image\Facades\Image'
+        'Image' => 'Intervention\Image\Facades\Image',
+        'Flashy' => MercurySeries\Flashy\Flashy::class,
     ])->toArray(),
 
 ];

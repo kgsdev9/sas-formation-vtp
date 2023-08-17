@@ -17,6 +17,7 @@ class GestionFormateurController extends Controller
         public function __construct(TeacherService $teacherService)
     {
         $this->teacherService  = $teacherService ;
+        $this->middleware(['admin', 'auth']);
     }
 
     /**
@@ -32,7 +33,7 @@ class GestionFormateurController extends Controller
     public function disableTeacher()
     {
         return view('admin.formateurs.listeDisable', [
-            'allTeacherNotVerfied' => $this->teacherService->teacherNotVerified()
+            'teachers' => $this->teacherService->teacherNotVerified()
         ]);
     }
 

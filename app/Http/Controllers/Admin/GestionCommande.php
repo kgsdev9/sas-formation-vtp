@@ -8,6 +8,13 @@ use App\Http\Controllers\Controller;
 
 class GestionCommande extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware(['admin', 'auth']);
+    }
+
     /**
      * Display a listing of the resource.
      */

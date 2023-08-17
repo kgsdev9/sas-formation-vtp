@@ -17,6 +17,7 @@ class GestionCategoryController extends Controller
         public function __construct(CategoryService $categoryService)
         {
             $this->categoryService  = $categoryService ;
+            $this->middleware(['admin', 'auth']);
         }
 
 

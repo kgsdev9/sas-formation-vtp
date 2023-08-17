@@ -38,7 +38,7 @@
                                                 <td class="email"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$value->email}}</font></font></td>
                                                 <td class="phone"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{date('d/m/Y', strtotime($value->created_at))}}</font></font></td>
 
-                                                <td>
+                                                {{-- <td>
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
                                                             <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Modifier</font></font></button>
@@ -47,7 +47,7 @@
                                                             <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retirer</font></font></button>
                                                         </div>
                                                     </div>
-                                                </td>
+                                                </td> --}}
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -134,13 +134,13 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="modal-footer" style="display: block;">
+                            {{-- <div class="modal-footer" style="display: block;">
                                 <div class="hstack gap-2 justify-content-end">
                                     <button type="button" class="btn btn-light" data-bs-dismiss="modal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fermer</font></font></button>
                                     <button type="submit" class="btn btn-success" id="add-btn">Update</button>
                                     <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
                                 </div>
-                            </div>
+                            </div> --}}
                         </form>
                     </div>
                 </div>

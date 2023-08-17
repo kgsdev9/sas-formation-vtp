@@ -22,6 +22,15 @@
 				<div class="text-center rounded-3 bg-white shadow-sm p-5">
 					<form action="{{ route('register') }}" method="POST" class="d-grid gap-3 mb-2">
 						@csrf
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 						<div class="social-btn border rounded-3">
 							<a href="#" class="text-dark w-100">
 								<div class="d-flex align-items-center py-3 px-3 border-bottom">
@@ -53,7 +62,7 @@
                         <input type="text" name="phone" class="form-control" placeholder="Telephone" value="{{old('phone')}}">
 
                         <input type="email" name="email" class="form-control" placeholder="Entrer votre Email">
-                        <textarea name="adresse" class="form-control" id="" cols="30" rows="2" placeholder="Entrer votre adresse"> {{old('adresse')?? 'Entrer votre adresse '}}</textarea>
+                        <textarea name="adresse" class="form-control" id="" cols="30" rows="2" placeholder="Entrer votre adresse"> {{old('adresse')?? 'Paris Rue des princes'}}</textarea>
 						<input type="password" name="password" class="form-control" placeholder="Entrer votre mot de passe">
 						<input type="password" name="password_confirmation" class="form-control" placeholder="Confirmer votre mot de passe">
 						<div class="form-check text-start">

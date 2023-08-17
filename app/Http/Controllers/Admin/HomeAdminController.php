@@ -36,7 +36,7 @@ class HomeAdminController extends Controller
         $this->userService = $userService;
         $this->couponService = $couponService;
         $this->orderService = $orderService;
-
+        $this->middleware(['admin', 'auth']);
     }
 
     /**

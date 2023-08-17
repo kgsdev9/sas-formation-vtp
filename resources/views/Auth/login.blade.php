@@ -20,6 +20,7 @@
 			</div>
 			<div class="col-lg-5">
 				<div class="text-center rounded-3 bg-white shadow-sm p-5">
+
 					<form action="{{ route('post.login') }}" method="POST" class="d-grid gap-3 mb-2">
 						@csrf
 						<div class="social-btn border rounded-3">
@@ -62,7 +63,7 @@
 
 
 
-						<button type="submit" class="btn btn-primary">S'inscrire</button>
+						<button type="submit" class="btn btn-primary">Se Connecter</button>
 					</form>
 					<p class="text-muted mt-3 mb-0">
 						Vous n'avez pas de compte ?

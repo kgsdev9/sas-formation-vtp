@@ -10,6 +10,7 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="author" content="Codescandy">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=JetBrains+Mono:ital,wght@0,100;1,100;1,200&display=swap" rel="stylesheet">
 
 <script>
     // Render blocking JS:
@@ -40,7 +41,7 @@
   <title>@yield('title')</title>
 </head>
 
-<body class="bg-white">
+<body class="bg-white" style="font-family: 'Inter', sans-serif;">
 
 
 <nav class="navbar navbar-expand-lg">
@@ -58,7 +59,10 @@
                  <a href="{{route('auth.login')}}" class="btn btn-primary d-none d-md-block">Se Connecter
                      @else
                      <a href="{{url('profiles')}}" class="btn btn-outline-primary me-2 ">Tableau de bord </a>
-                     <a href="#" class="btn btn-primary d-none d-md-block">Deconnexion
+                        <form action="{{route('logout')}}" method="POST">
+                            @csrf
+                           <button class="btn btn-dark d-none d-md-block" onclick="return confimr('voulez-vous vous deconnecter .')">Deconnexion</button>
+                        </form>
                  @endguest
 
               </a>
@@ -194,7 +198,7 @@
   <script src="{{asset('assets/js/vendors/tnsSlider.js')}}"></script>
   <script src="{{asset('assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js')}}"></script>
   <script src="{{asset('assets/js/vendors/popup.js')}}"></script>
-
+  @include('flashy::message')
 </body>
 
 </html>

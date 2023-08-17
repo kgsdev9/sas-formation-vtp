@@ -67,7 +67,7 @@ class CourseController extends Controller
         $img->resize(825, 490, function ($constraint) {
             $constraint->aspectRatio();
         })->save('courss/images'.'/'.$imageName);
-     
+
             $data = Course::create([
             'title' => $request->input('title'),
             'slug' => Str::slug($request->input('title')),
@@ -79,7 +79,7 @@ class CourseController extends Controller
             'image' => $imageName,
             'formateur_id' => Auth::user()->prorietaire_id
         ]);
-
+        flashy()->success('Formation ajoutée avec success'. Auth::user()->name);
         return redirect()->route('courses.index', ['slug'=>$data->slug, 'id' => $data->id])->with('sucess', 'Votr Fomation a été ajouté avec sucess');
     }
 
@@ -121,6 +121,7 @@ class CourseController extends Controller
         $ressource->url_video = $request->input('url_video');
         $ressource->description = $request->input('description');
         $ressource->update();
+        flashy()->success('Formation modifiée avec success'. Auth::user()->name);
         return redirect()->route('courses.index');
 
     }
@@ -131,8 +132,8 @@ class CourseController extends Controller
     public function destroy(string $id)
     {
         $course = Course::find($id);
-
         $course->delete();
+        flashy()->success('Formation supprimée avec succes'. Auth::user()->name);
         return redirect()->back();
     }
 }

@@ -14,6 +14,7 @@ class LogoutController extends Controller
     public function logout()
     {
      Auth::logout();
+     flashy()->success('Vous êtes déconnecté ');
     return redirect()->route('home');
     }
 

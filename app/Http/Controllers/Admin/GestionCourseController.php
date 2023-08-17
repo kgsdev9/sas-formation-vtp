@@ -9,12 +9,18 @@ use App\Http\Controllers\Controller;
 
 class GestionCourseController extends Controller
 {
+
+
+    public function __construct()
+    {
+    $this->middleware(['admin', 'auth']);
+    }
     /**
      * Display a listing of the resource.
      */
     public function allCourse()
     {
-        $course = Course::all();
+        $course = Course::paginate(10);
         return view('admin.courses.liste', compact('course'));
     }
 

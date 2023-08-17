@@ -10,7 +10,7 @@ use App\Jobs\NewsUserNotificationAdminJob;
 
 
 class RegisterController extends Controller
-{ 
+{
 
     public function __construct()
     {

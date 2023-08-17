@@ -118,7 +118,7 @@
     </section>
 
 
-    
+
 
     <section class="py-lg-14 bg-light pt-8 pb-10">
         <!-- container -->
@@ -269,7 +269,7 @@
               <!-- button -->
 
               <div class="col-12 mt-8 text-center">
-                <a href="{{route('register')}}" class="btn btn-primary">S'inscrire Maintenant </a>
+                <a href="{{route('auth.register')}}" class="btn btn-primary">S'inscrire Maintenant </a>
               </div>
             </div>
           </div>

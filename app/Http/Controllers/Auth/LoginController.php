@@ -12,7 +12,7 @@ class LoginController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware(['guest', 'admin']);
     }
 
     public function login() {
@@ -23,11 +23,13 @@ class LoginController extends Controller
     {
         $verifications = $request->only('email', 'password');
         if (Auth::attempt($verifications)) {
-
+            flashy()->success('Bienvenue '. Auth::user()->name);
             return redirect()->intended('/');
-        } else{
-            return back();
         }
+
+        return back()->withErrors([
+            'email' => 'Identifiants incorrects.',
+        ])->onlyInput('email');
     }
 
 

@@ -11,9 +11,7 @@
 					<!-- Breadcrumb -->
 
 				</div>
-				<div>
-					<a href="#" class="btn btn-primary">Ajouter une formation </a>
-				</div>
+
 			</div>
 		</div>
 	</div>
@@ -21,14 +19,6 @@
 		<div class="col-lg-12 col-md-12 col-12">
 			<!-- Card -->
 			<div class="card rounded-3">
-
-				<div class="p-4 row">
-					<!-- Form -->
-					<form class="d-flex align-items-center col-12 col-md-12 col-lg-12">
-						<span class="position-absolute ps-3 search-icon"><i class="fe fe-search"></i></span>
-						<input type="search" class="form-control ps-6" placeholder="Rechercher">
-					</form>
-				</div>
 				<div>
 					<!-- Table -->
 					<div class="tab-content" id="tabContent">
@@ -116,15 +106,7 @@
 				<div class="card-footer">
 					<nav aria-label="Page navigation example">
 						<ul class="pagination justify-content-center mb-0">
-							<li class="page-item disabled">
-								<a class="page-link mx-1 rounded" href="#"><i class="mdi mdi-chevron-left"></i></a>
-							</li>
-							<li class="page-item active"><a class="page-link mx-1 rounded" href="#">1</a></li>
-							<li class="page-item"><a class="page-link mx-1 rounded" href="#">2</a></li>
-							<li class="page-item"><a class="page-link mx-1 rounded" href="#">3</a></li>
-							<li class="page-item">
-								<a class="page-link mx-1 rounded" href="#"><i class="mdi mdi-chevron-right"></i></a>
-							</li>
+							{{$course->links()}}
 						</ul>
 					</nav>
 				</div>
