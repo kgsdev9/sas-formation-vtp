@@ -588,7 +588,7 @@
 
                       </div>
                       <!-- text -->
-                      <h3 class="mb-0 h4">Leigh F. Keller</h3>
+                      <h3 class="mb-0 h4">Stephane F. Keller</h3>
                       <span>Administrateur de base de données </span>
                     </div>
                   </div>
