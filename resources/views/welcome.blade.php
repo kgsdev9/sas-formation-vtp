@@ -380,11 +380,11 @@
           <div class="col-lg-5 col-12">
             <div class="text-white p-5 p-lg-0">
               <!-- text -->
-              <h2 class="h1 text-white">Devenez instructeur aujourd'hui</h2>
-              <p class="mb-0">un support de cours <br>
-                 une fiche de présence ou une capture d'écran de présence sur l'outil de visio. <br>
+              <h2 class="h1 text-white">Prérequis pour dévenir  instructeur</h2>
+              <p class="mb-0"> * un support de cours <br>
+                * une fiche de présence ou une capture d'écran de présence sur l'outil de visio. <br>
 
-                 mettre en place un petit laboratoire de test pour les apprenant..</p>
+                * mettre en place un petit laboratoire de test pour les apprenant..</p>
               <a href="{{route('become.teacher')}}" class="btn btn-white mt-4">Commencez à enseigner aujourd'hui</a>
             </div>
           </div>
