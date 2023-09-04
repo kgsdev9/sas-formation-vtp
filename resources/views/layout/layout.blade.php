@@ -10,6 +10,7 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="author" content="Codescandy">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=JetBrains+Mono:ital,wght@0,100;1,100;1,200&display=swap" rel="stylesheet">
 
 <script>
@@ -156,8 +157,11 @@
                 </div>
                 <div class="col-lg-8 col-md-12 col-12">
                     <span>© <span id="copyright3">
-                        <script>document.getElementById('copyright3').appendChild(document.createTextNode(new Date().getFullYear()))</script>2023
-                    </span> VTP FORMATION est une  plateforme mise en place par le groupe VTP dans le but de former disppenser des cours aux débutants en informatique et aussi professionels des metiers.</span>
+
+
+                    </span>- En cas de litige, VTP-MARKET se réserve un droit d'arbitrage se basant sur les critères indiqués. <br>
+
+                    - Le paiement des formateurs intervient sous une période de 7 jours ouvrés après la prestation.</span>
                 </div>
 
                 <!-- Links -->
@@ -198,6 +202,7 @@
   <script src="{{asset('assets/js/vendors/tnsSlider.js')}}"></script>
   <script src="{{asset('assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js')}}"></script>
   <script src="{{asset('assets/js/vendors/popup.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
   @include('flashy::message')
 </body>
 
