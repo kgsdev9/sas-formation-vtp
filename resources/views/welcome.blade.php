@@ -17,7 +17,7 @@
               <!-- heading -->
               <h1 class="display-3 fw-bold mb-3">Développez vos compétences et faites progresser votre carrière</h1>
               <!-- para -->
-              <p class="pe-lg-10 mb-5">VTP FORMATION est une  plateforme mise en place par le groupe VTP MARKET  dans le but dE  disppenser des cours aux débutants en informatique et aux  autres activités professionelles.
+              <p class="pe-lg-10 mb-5">VTP FORMATION est une  plateforme mise en place par le groupe VTP MARKET  dans le but de  dispenser des cours aux débutants en informatique et aux  autres activités professionelles.
             </p>
               <!-- btn -->
               <a href="{{route('become.teacher')}}" class="btn btn-primary">Devenir Formateur</a>
@@ -136,13 +136,7 @@
                   <span class="text-uppercase text-primary fw-semibold ls-md">PARCOURIR LA CATÉGORIE
                   </span>
                   <!-- heading -->
-
-                  <h2 class="h1 fw-bold mt-3">Découvrez des emplois dans des rôles populaires
-                  </h2>
                   <!-- text -->
-
-                  <p class="mb-0 fs-4">Sélectionnez un rôle et nous vous montrerons les emplois pertinents pour celui-ci!</p>
-
                 </div>
               </div>
               <div class="row gy-4">
