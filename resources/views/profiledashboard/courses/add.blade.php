@@ -1,7 +1,6 @@
-{{-- @extends('layout.layout')
-
-@section('content') --}}
-
+@extends('layout.layout')
+@section('title', 'Créer une nouvelle formation')
+@section('content')
 <main>
 
     <section class="py-4 py-lg-6 bg-primary">
@@ -174,5 +173,5 @@
       </div>
     </section>
   </main>
-{{-- @endsection --}}
+ @endsection
 
