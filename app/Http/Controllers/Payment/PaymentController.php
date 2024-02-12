@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Payment;
 
 use App\Models\Order;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OrderRequest;
 use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
@@ -14,13 +14,7 @@ public function __construct() {
     $this->middleware('auth');
 }
 
-
-public function convertionAmount(int $value) {
-    return ($value *  655);
- }
-
- public function initialisePayment(Request $request)  {
-
+ public function initialisePayment(OrderRequest $request)  {
     $commande =  Order::create([
          'codeCommande'=>rand(1300, 4000),
          'phone'=>Auth::user()->phone,
@@ -36,7 +30,7 @@ public function convertionAmount(int $value) {
              'merchantId' => "PP-F2197",
              'amount' => $request->price * 650,
              'description' => $request->title,
-             'channel' => "CARD",
+             'channel' => $request->payment_method,
              'countryCurrencyCode' => "952",
              'referenceNumber' => "REF-".time(),
              'customerEmail' => Auth::user()->email,
@@ -67,18 +61,17 @@ public function convertionAmount(int $value) {
 
      public function sucessPayment() {
 
-    $order = Order::where('user_id', Auth::user()->id)
-    ->orderByDesc('created_at')
-    ->first();
-
-    $order->update([
-      'status' =>'effectue'
-    ]);
+        $order = Order::where('user_id', Auth::user()->id)
+        ->orderByDesc('created_at')
+        ->first();
+        $order->update([
+        'status' =>'effectue'
+        ]);
         return view('payment.sucess');
      }
 
      public function cancelPayment() {
-        $order = Order::where('user_id', Auth::user()->id)
+         $order = Order::where('user_id', Auth::user()->id)
         ->orderByDesc('created_at')
         ->first();
         $order->update([
@@ -86,7 +79,4 @@ public function convertionAmount(int $value) {
         ]);
         return view('payment.cancel');
      }
-
-
-
 }

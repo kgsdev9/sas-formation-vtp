@@ -42,14 +42,16 @@
 											<td>{{$value->amount}} € - {{$value->amount * 650}}FCFA </td>
                                             <td>
                                                 @if ($value->status == "en atttente")
-                                                <span class="badge bg-warning">Confirmation en cours</span>
-                                                @else
-                                                <span>paiement efecte</span>
-                                                @endif
+                                                <span class="badge bg-warning">En cours</span>
+                                                @elseif($value->status == "echec")
+                                                <span class="badge bg-danger">Echec</span>
 
+                                                @elseif($value->status == "effectue")
+                                                <span class="badge bg-success">Validée</span>
+                                                @endif
                                             </td>
 											<td>
-												<a href="#" class="fe fe-eye"></a>
+												<a href="{{route('orders.detail', $value->id)}}" class="fe fe-eye"></a>
 											</td>
 										</tr>
                                         @endforeach

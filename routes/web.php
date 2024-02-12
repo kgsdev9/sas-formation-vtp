@@ -55,6 +55,7 @@ Route::resource('courses', CourseController::class);
 Route::get('/course/{slug}', [HomeController::class, 'detailCourse'])->name('detail.course');
 Route::get('/processinPayment', [PaymentController::class , 'createNewPayment'])->name('payment.form');
 Route::get('/orders/user/liste', [HomeController::class, 'ordersListe'])->name('orders.users.liste');
+Route::get('/orders/{id}', [HomeController::class, 'detailCommande'])->name('orders.detail');
 
 
 Route::get('/tests', function() {

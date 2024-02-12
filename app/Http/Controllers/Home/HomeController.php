@@ -80,6 +80,12 @@ class HomeController extends Controller
 
     }
 
+    public function detailCommande($id) {
+      $commande  =  Order::find($id);
+     
+      return view('profiledashboard.orders.detail', compact('commande'));
+    }
+
 
     public function courseByCategory($id) {
         $course = Course::where('category_id' ,$id)->get();

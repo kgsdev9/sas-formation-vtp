@@ -35,10 +35,7 @@
                     @endcan
 
                     @can('is_user')
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i
-                                class="fe fe-star nav-icon"></i>Mon Profil</a>
-                    </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('orders.users.liste')}}"><i
                                 class="fe fe-star nav-icon"></i>Mes Commandes  </a>

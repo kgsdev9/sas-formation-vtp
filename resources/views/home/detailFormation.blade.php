@@ -40,10 +40,24 @@
                             <br><br>
                             <div class="d-grid">
                                 <form action="{{route('process.checkout')}}" method="POST">
+
                                     @csrf
                                     <input type="hidden" name="price" value="{{$course->prix}}">
                                     <input type="hidden" name="couse_id" value="{{$course->id}}">
                                     <input type="hidden" name="title" value="{{$course->title}}">
+                                      @error('payment_method')
+                                     <span class="text-danger">{{$message}}</span>
+                                      @enderror
+
+                                    <div>
+
+                                        <label for="">Payer via card</label>
+                                        <input type="radio" name="payment_method" value="CARD">
+                                    </div>
+                                    <div>
+                                        <label for="">Payer via Paypal</label>
+                                        <input type="radio" name="payment_method" value="PAYPAL">
+                                    </div>
                                     <button type="submit" class="btn btn-outline-primary">Proceder au paiement </button>
                                 </form>
 							</div>
