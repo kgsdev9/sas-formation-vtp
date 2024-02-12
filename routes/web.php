@@ -84,7 +84,7 @@ Route::resources([
 
 
 Route::get('/cancel-payment', [PaymentController::class, 'cancelPayment'])->name('cancel.payment');
-Route::get('/sucess-payment', [HomeController::class, 'sucessPayment'])->name('success.payment');
+Route::get('/sucess-payment', [PaymentController::class, 'sucessPayment'])->name('success.payment');
 Route::post('/process-payment', [PaymentController::class,'initialisePayment'])->name('process.checkout');
 
 
