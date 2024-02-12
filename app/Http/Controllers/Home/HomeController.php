@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Models\Post;
 use App\Models\Order;
 use App\Models\Course;
-use CinetPay\CinetPay;
 use App\Models\Category;
 use App\Models\Formateur;
-use Illuminate\Http\Request;
 use App\Services\CourseService;
 use App\Services\TeacherService;
 use App\Services\CategoryService;
@@ -46,7 +43,6 @@ class HomeController extends Controller
 
 
     public function homeCategory() {
-
         $category = Category::paginate(18);
         return view('home.categoryHome', compact('category'));
     }
@@ -56,9 +52,7 @@ class HomeController extends Controller
         $ec = Formateur::where('slug', $slug)->first();
         $name =  $ec->fullname ;
         $image = $ec->avatar;
-
         $url = URL::current();
-
         $shareComponent = \Share::page(
            $url
         )
@@ -68,11 +62,7 @@ class HomeController extends Controller
         ->telegram()
         ->whatsapp()
         ->reddit();
-
-
-
         $query = Course::where('formateur_id', $ec->id)->get();
-
         return view('home.boutiqueFormateur', compact('query', 'name', 'image', 'shareComponent'));
     }
 
@@ -97,27 +87,19 @@ class HomeController extends Controller
     }
 
     public function commande($id) {
-
         if(Auth::check())  {
             $course = Course::find($id);
         } else {
             return redirect()->route('auth.login');
         }
-
         return view('payment.payement', compact('course'));
     }
 
 
     public function detailCourse($id) {
         $course = Course::where('slug', $id)->first();
-
-
          return view('home.detailFormation', compact('course'));
-
-
     }
-
-
 
      public function annuaireFormateur() {
         return view('home.formateur-home', [
@@ -132,63 +114,8 @@ class HomeController extends Controller
 
 
 
-     public function cancelPayment() {
-        return redirect()->route('cancel.payment');
-     }
 
-
-
-     public function createOrders(Request $request){
-
-        Order::create([
-            'codeCommande' => $this->codeCommande,
-            'fullname' => Auth::user()->fullname,
-            'phone' => Auth::user()->phone,
-            'amount' => $request->input('prix'),
-            'adresse' =>Auth::user()->adresse,
-            'email'=> Auth::user()->email,
-            'course_id' => $request->input('course_id'),
-            'user_id' => Auth::user()->id,
-            ]);
-            $data = array(
-                'merchantId' => "PP-F2197",
-                'amount' => $request->prix * 650,
-                'description' => $request->title,
-                'channel' => "CARD",
-                'countryCurrencyCode' => "952",
-                'referenceNumber' => "REF-".time(),
-                'customerEmail' => Auth::user()->email,
-                'customerFirstName' => Auth::user()->name,
-                'customerLastname' => Auth::user()->fullname,
-                'customerPhoneNumber' => Auth::user()->phone,
-                'notificationURL' => route('success.payment'),
-                'returnURL' => route('cancel.payment'),
-                'returnContext' => $request->title,
-            );
-
-            $data = json_encode($data);
-
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, "https://www.paiementpro.net/webservice/onlinepayment/init/curl-init.php");
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8'));
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-            curl_setopt($ch, CURLOPT_HEADER, FALSE);
-            curl_setopt($ch, CURLOPT_POST, TRUE);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-            $response = curl_exec($ch);
-            $obj = json_decode($response);
-            $urlPayement = $obj->url ;
-            return redirect()->to($urlPayement);
-            // curl_close($ch);
-
-        }
-
-
-     }
-
-
-
+    }
 
 
 

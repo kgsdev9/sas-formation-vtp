@@ -4,7 +4,7 @@
 
   div#social-links ul li {
       display: inline-block;
-  }          
+  }
   div#social-links ul li a {
       margin: 1px;
       font-size: 30px;
@@ -12,7 +12,7 @@
 
   }
 </style>
-
+    
 <main>
     <section class="pt-5">
       <div class="container">
@@ -38,7 +38,7 @@
               </div>
               <div>
                 <a href="#" class="btn btn-primary btn-sm d-none d-md-block">
-                
+
                   Partager Ma boutique </a>
               </div>
               <span> {!! $shareComponent !!}</span>
@@ -65,7 +65,7 @@
               <div class="tab-pane fade active show" id="bookmarked" role="tabpanel" aria-labelledby="bookmarked-tab">
                 <div class="row">
                     @foreach ($query as $value)
-                
+
 
                       <div class="col">
                         <div class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden video-card-item position-relative">
@@ -90,7 +90,7 @@
                             <div class="d-flex align-items-center justify-content-between mb-3">
                               <span class="badge bg-danger text-white">{{ $value->level->name }}</span>
                               <div class="card-price text-danger">
-                                Reduction de . 
+                                Reduction de .
                                 <del class="text-black">
                                  300
                                 </del>

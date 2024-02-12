@@ -24,7 +24,7 @@
 					<form action="{{ route('post.login') }}" method="POST" class="d-grid gap-3 mb-2">
 						@csrf
 						<div class="social-btn border rounded-3">
-							<a href="#" class="text-dark w-100">
+							<a href="{{ url('/login/google') }}" class="text-dark w-100">
 								<div class="d-flex align-items-center py-3 px-3 border-bottom">
 									<img src="{{ asset(('google-icon.png')) }}" class="img-fluid" alt="Edutree">
 									<p class="mb-0 mx-auto">
@@ -32,14 +32,7 @@
 									</p>
 								</div>
 							</a>
-							<a href="#" class="text-dark w-100">
-								<div class="d-flex align-items-center py-3 px-3">
-									<img src="{{ asset('fb-icon.png') }}" class="img-fluid me-2" alt="Edutree">
-									<p class="mb-0 mx-auto">
-										Se Connecter avec  Facebook
-									</p>
-								</div>
-							</a>
+
 						</div>
 
 											@if ($errors->any())

@@ -41,7 +41,7 @@
  <nav class="navbar-vertical navbar">
      <div class="vh-100" data-simplebar>
          <!-- Brand logo -->
-         <a class="navbar-brand" href="../../index.html">
+         <a class="navbar-brand" href="#">
              <img src="../../assets/images/brand/logo/logo-inverse.svg" alt="" >
          </a>
          <!-- Navbar nav -->
@@ -164,25 +164,20 @@
              @yield('master')
         </main>
     </div>
-    <!-- Script -->
-
-    <!-- Libs JS -->
-<script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
-<script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../../assets/libs/simplebar/dist/simplebar.min.js"></script>
-
-
-<!-- Theme JS -->
-<script src="../../assets/js/theme.min.js"></script>
 
 
 
-<script src="../../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-<script src="../../assets/js/vendors/chart.js"></script>
+    <script src="{{asset('assets/libs/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/libs/simplebar/dist/simplebar.min.js')}}"></script>
+    <script src="{{asset('assets/js/theme.min.js')}}"></script>
+      <script src="{{asset('assets/libs/tiny-slider/dist/min/tiny-slider.js')}}"></script>
+      <script src="{{asset('assets/js/vendors/tnsSlider.js')}}"></script>
 
-<script src="../../assets/libs/flatpickr/dist/flatpickr.min.js"></script>
-	<script src="../../assets/js/vendors/flatpickr.js"></script>
-
+      <script src="{{asset('assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+      <script src="{{asset('assets/libs/simplebar/dist/simplebar.min.js')}}"></script>
+      <script src="{{asset('assets/js/theme.min.js')}}"></script>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
-
 </html>

@@ -1,19 +1,13 @@
 @extends('layout.layout')
-
-
 @section('content')
-
 <section class="py-6">
     <div class="container">
       <div class="row">
         <div class="col-xl-8 col-lg-8 col-md-12 col-12">
           <!-- Card -->
           <div class="card  mb-4">
-
             <!-- Card body -->
             <div class="card-body">
-
-
               <div class="card mb-3 border shadow-none border-top-0">
                 <div class="border-top border-4 rounded-3 border-dark-warning">
                 <!-- Card body -->

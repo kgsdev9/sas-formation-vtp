@@ -2,101 +2,77 @@
 
 namespace App\Http\Controllers\Payment;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
 
 public function __construct() {
-
+    $this->middleware('auth');
 }
 
 
-public function createNewPayment() {
+public function convertionAmount(int $value) {
+    return ($value *  655);
+ }
 
-    dd('merci');
+ public function initialisePayment(Request $request)  {
 
-    $data = array(
-        'merchantId' => "PP-F2197",
-        'amount' => 1000,
-        'description' => "Api PHP",
-        'channel' => "PAYPAL",
-        'countryCurrencyCode' => "952",
-        'referenceNumber' => "REF-".time(),
-        'customerEmail' => "test@gmail.com",
-        'customerFirstName' => "Ishola",
-        'customerLastname' => "Lamine",
-        'customerPhoneNumber' => "01234567",
-        'notificationURL' => "callback_url",
-        'returnURL' => "callback_url",
-        'returnContext' => '{"data":"data 1","data2":"data 2"}',
-    );
+    $commande =  Order::create([
+         'codeCommande'=>rand(1300, 4000),
+         'phone'=>Auth::user()->phone,
+         'email'=>Auth::user()->email,
+         'fullname'=>Auth::user()->fullname,
+         'amount'=>$request->price,
+         'adresse'=>Auth::user()->adresse,
+         'course_id'=> $request->couse_id,
+         'user_id'=>Auth::user()->id,
+         'status'=> "en atttente",
+     ]);
+         $data = array(
+             'merchantId' => "PP-F2197",
+             'amount' => $request->price * 650,
+             'description' => $request->title,
+             'channel' => "CARD",
+             'countryCurrencyCode' => "952",
+             'referenceNumber' => "REF-".time(),
+             'customerEmail' => Auth::user()->email,
+             'customerFirstName' => Auth::user()->fullname,
+             'customerLastname' => Auth::user()->fullname,
+             'customerPhoneNumber' => Auth::user()->phone,
+             'notificationURL' => route('success.payment'),
+             'returnURL' => route('cancel.payment'),
+             'returnContext' => '',
+         );
+         $data = json_encode($data);
+         $ch = curl_init();
+         curl_setopt($ch, CURLOPT_URL, "https://www.paiementpro.net/webservice/onlinepayment/init/curl-init.php");
+         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8'));
+         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+         curl_setopt($ch, CURLOPT_HEADER, FALSE);
+         curl_setopt($ch, CURLOPT_POST, TRUE);
+         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+         $response = curl_exec($ch);
+         $obj = json_decode($response);
+         $urlPayement = $obj->url ;
+         return redirect()->to($urlPayement);
+         // curl_close($ch);
 
-    $data = json_encode($data);
-
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://www.paiementpro.net/webservice/onlinepayment/init/curl-init.php");
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8'));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-    curl_setopt($ch, CURLOPT_HEADER, FALSE);
-    curl_setopt($ch, CURLOPT_POST, TRUE);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-    $response = curl_exec($ch);
+     }
 
 
+     public function sucessPayment() {
+        return view('payment.sucess');
+     }
 
-    // return redirect()->to($response);
+     public function cancelPayment() {
+        return view('payment.cancel');
+     }
 
 
-}
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

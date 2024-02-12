@@ -11,7 +11,7 @@
 
           </div>
           <!-- button -->
-          
+
         </div>
 
       </div>
@@ -70,22 +70,21 @@
                             {{$value->created_at}}
 
                         </td>
-
                         <td>
+                            @if($value->status === "en atttente")
+                          <span class="badge text-success bg-light-warning">{{$value->status}}</span>
+                          @elseif($value->status ==="effectue")
                           <span class="badge text-success bg-light-success">{{$value->status}}</span>
+
+                          @elseif($value->status ==="echec")
+                          <span class="badge text-success bg-light-danger">{{$value->status}}</span>
+                          @endif
                         </td>
                         <td>
                             {{$value->amount}}€  -  {{$value->amount * 650}}FCFA
                         </td>
-
                       </tr>
                       @endforeach
-
-
-
-
-
-
                     </tbody>
                   </table>
                 </div>

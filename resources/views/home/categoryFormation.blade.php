@@ -14,74 +14,41 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-5">
         @foreach ($course as  $value)
-        <div class="col-lg-3 col-md-6 col-12">
-            <!-- Card -->
-            <div class="card  mb-4 card-hover">
-              <a href="{{route('detail.course', $value->slug)}}" class="card-img-top">
-                <img src="{{asset('courss/images/'.$value->image)}}" alt="course" class="card-img-top rounded-top-md"></a>
-              <!-- Card body -->
-              <div class="card-body">
-                <h3 class="h4 mb-2 text-truncate-line-2 ">
-                    <a href="{{route('detail.course', $value->slug)}}" class="text-inherit">
-                        {{$value->title}}</a></h3>
-                        <ul class="mb-3  list-inline">
-                            <li class="list-inline-item"><i class="mdi mdi-clock-time-four-outline text-muted me-1"></i> {{$value->created_at->diffForHumans()}}
-                            </li>
+        <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden video-card-item position-relative">
+                <img src="{{ asset('courss/images/'.$value->image) }}" class="img-fluid" alt="#" loading="lazy" style="height:150px">
+                <div class="card-body">
+                    <h6 class="card-title pb-3 text-black mb-0">
+                        <span class="bg-warning badge text-black me-2"> {{ $value->category->name }}</span>
+                        {{ $value->title }}
+                    </h6>
+                    <p class="card-text mb-0">
+                        Publié par {{ $value->formateur->fullname }}
+                    </p>
+                    <div class="card-text text-muted small">
+                        {{ Str::limit($value->description, 100) }}
+                    </div>
 
-                            @if($value->level->name == "Debutant")
-                            <li class="list-inline-item"><svg class="me-1 mt-n1" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="3" y="8" width="2" height="6" rx="1" fill="#754FFE">
-                                </rect>
-                                <rect x="7" y="5" width="2" height="9" rx="1" fill="#DBD8E9">
-                                </rect>
-                                <rect x="11" y="2" width="2" height="12" rx="1" fill="#DBD8E9">
-                                </rect>
-                              </svg> debutant </li>
-
-                              @elseif($value->level->name == "Avancee")
-                              <li class="list-inline-item"><svg class="me-1 mt-n1" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <rect x="3" y="8" width="2" height="6" rx="1" fill="#754FFE">
-                                  </rect>
-                                  <rect x="7" y="5" width="2" height="9" rx="1" fill="#754FFE">
-                                  </rect>
-                                  <rect x="11" y="2" width="2" height="12" rx="1" fill="#754FFE">
-                                  </rect>
-                                </svg>Avancé</li>
-
-                                @elseif($value->level->name == "Intermédiaire")
-                                <li class="list-inline-item"><svg class="me-1 mt-n1" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <rect x="3" y="8" width="2" height="6" rx="1" fill="#754FFE">
-                                  </rect>
-                                  <rect x="7" y="5" width="2" height="9" rx="1" fill="#754FFE">
-                                  </rect>
-                                  <rect x="11" y="2" width="2" height="12" rx="1" fill="#DBD8E9">
-                                  </rect>
-                                </svg>Intermediate</li>
-                              @endif
-                          </ul>
-
-              </div>
-              <!-- Card footer -->
-              <div class="card-footer">
-                <div class="row align-items-center g-0">
-                  <div class="col-auto">
-                    <img src="{{asset('formateurs/images/'.$value->formateur->avatar)}}" class="rounded-circle avatar-xs" alt="avatar">
-                  </div>
-                  <div class="col ms-2">
-                    <span>{{$value->formateur->fullname}}</span>
-                  </div>
-                  <div class="col-auto">
-                    <a href="{{route('commande.formation', ['slug'=>$value->slug, 'id' => $value->id])}}" class="text-inherit">
-                      <i class="fe fe-shopping-cart text-primary align-middle me-2"></i>Acheter
-                    </a>
-                  </div>
                 </div>
-              </div>
+                <div class="card-footer border-0 bg-white border-top p-3">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="badge bg-danger text-white">{{ $value->level->name }}</span>
+                        <div class="card-price text-danger">
+                            Soit
+                            <span class="text-black">
+                                {{ $value->prix * 650}} FCFA
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary"><i class="bi bi-cart-fill"></i> {{ $value->prix}} €</button>
+                    </div>
+                    <a href="{{ route('detail.course', $value->slug) }}" class="stretched-link"></a>
+                </div>
             </div>
-          </div>
-
+        </div>
         @endforeach
 
 

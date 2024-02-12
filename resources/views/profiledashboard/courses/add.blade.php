@@ -109,7 +109,7 @@
 
                           <div class="mb-4 col-12 col-md-12">
                             <!-- label -->
-                            <label class="form-label" for="phone">Demo de la formation  @error('url_video')
+                            <label class="form-label" for="phone">Demo de la formation (Optionnel)  @error('url_video')
                                 <small class="text-danger">{{$message}}</small>
 
                              @enderror</label>

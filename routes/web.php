@@ -5,7 +5,6 @@ use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\GestionCommande;
 use App\Http\Controllers\Auth\ActionController;
-use App\Http\Controllers\Admin\PapypalController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Logout\LogoutController;
 use App\Http\Controllers\Courses\CourseController;
@@ -13,13 +12,14 @@ use App\Http\Controllers\Admin\HomeAdminController;
 use App\Http\Controllers\Episode\EpisodeController;
 use App\Http\Controllers\Payment\PaymentController;
 use App\Http\Controllers\Profles\ProfileController;
-use App\Http\Controllers\Admin\GestionUserController;
+use App\Http\Controllebers\Admin\GestionUserController;
 use App\Http\Controllers\Admin\GestionCouponController;
 use App\Http\Controllers\Admin\GestionCourseController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Formateur\FormateurController;
 use App\Http\Controllers\Admin\GestionCategoryController;
 use App\Http\Controllers\Admin\GestionFormateurController;
+use App\Http\Controllers\AuthSocialController;
 use App\Http\Middleware\AdminMddleware;
 
 /*
@@ -32,11 +32,6 @@ use App\Http\Middleware\AdminMddleware;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-
-
-// Route::get('/payment-request-id', [PapypalController::class, 'processTransaction'])->name('process.payment');
-
 
 
 Route::get('/commande-formation-{id}', [HomeController::class, 'commande'])->name('commande.formation');
@@ -60,19 +55,11 @@ Route::resource('courses', CourseController::class);
 Route::get('/course/{slug}', [HomeController::class, 'detailCourse'])->name('detail.course');
 Route::get('/processinPayment', [PaymentController::class , 'createNewPayment'])->name('payment.form');
 Route::get('/orders/user/liste', [HomeController::class, 'ordersListe'])->name('orders.users.liste');
-Route::get('/test', function() {
-    return view('home.categoryHome');
-});
+
 
 Route::get('/tests', function() {
     return view('actions.sucessTeacher');
 });
-
-Route::post('/orders/Create', [HomeController::class, 'createOrders'])->name('create.orders');
-Route::get('/cancel-payment', [HomeController::class, 'cancelPayment'])->name('cancel.payment');
-Route::get('/sucess-payment', [HomeController::class, 'successPayment'])->name('success.payment');
-
-
 
 
 Route::middleware([AdminMddleware::class])->group(function () {
@@ -86,7 +73,6 @@ Route::middleware([AdminMddleware::class])->group(function () {
     Route::post('/sendNotificationTest',  [GestionFormateurController::class, 'sendNotificationTest'])->name('test.confirmed');
     Route::get('/all-courses', [GestionCourseController::class, 'allCourse'])->name('all.admin.course');
     Route::get('/course/detail/{slug}-{id}', [GestionCourseController::class, 'show'])->name('admin.course.show');
-
 });
 
 Route::resources([
@@ -96,5 +82,11 @@ Route::resources([
 ]);
 
 
+Route::get('/cancel-payment', [PaymentController::class, 'cancelPayment'])->name('cancel.payment');
+Route::get('/sucess-payment', [HomeController::class, 'sucessPayment'])->name('success.payment');
+Route::post('/process-payment', [PaymentController::class,'initialisePayment'])->name('process.checkout');
 
 
+// GoogleLoginController redirect and callback urls
+Route::get('/login/{google}', [AuthSocialController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('/login/{google}/callback', [AuthSocialController::class, 'handleGoogleCallback']);
