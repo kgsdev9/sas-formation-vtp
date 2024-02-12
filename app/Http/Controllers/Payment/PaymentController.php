@@ -66,10 +66,24 @@ public function convertionAmount(int $value) {
 
 
      public function sucessPayment() {
+
+    $order = Order::where('user_id', Auth::user()->id)
+    ->orderByDesc('created_at')
+    ->first();
+
+    $order->update([
+      'status' =>'effectue'
+    ]);
         return view('payment.sucess');
      }
 
      public function cancelPayment() {
+        $order = Order::where('user_id', Auth::user()->id)
+        ->orderByDesc('created_at')
+        ->first();
+        $order->update([
+          'status' =>'echec'
+        ]);
         return view('payment.cancel');
      }
 
