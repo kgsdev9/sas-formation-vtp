@@ -9,7 +9,7 @@
             <div class="mb-10">
               <h1 class="mb-3 display-4 fw-bold">Dévenir Formateur </h1>
               <p class="mb-0 lead pe-lg-10 ">
-                Renseingez vos informations pour publier vos formations et commencez à gagner de l'argent des missions.
+                Cultivez le potentiel des autres en partageant votre savoir : devenez formateur.
               </p>
             </div>
           </div>
@@ -36,23 +36,23 @@
                                     <label class="form-label" for="lname">Nom et Prénom  @error('fullname')
                                             <small class="text-danger">{{$message}}</small>
                                     @enderror <span class="text-danger">*</span></label>
-                                    <input type="text" id="lname" class="form-control" placeholder="KGSDEV TECHNLOGIE" name="fullname" value="{{old('fullname')}}">
+                                    <input type="text" id="lname" class="form-control" placeholder="Saisissez votre nom et prenom" name="fullname" value="{{old('fullname')}}">
                                   </div>
                                   <div class="mb-4 col-12 col-md-12">
                                     <label class="form-label" for="lname">Poste @error('poste')
                                         <small class="text-danger">{{$message}}</small>
                                 @enderror  <span class="text-danger">*</span></label>
-                                    <input type="text" id="lname" class="form-control" placeholder="DEVELOPPEUR WEB" name="poste" value="{{old('poste')}}">
+                                    <input type="text" id="lname" class="form-control" placeholder="Intitulé de poste" name="poste" value="{{old('poste')}}">
                                   </div>
                                   <div class="mb-4 col-12 col-md-12">
                                     <label class="form-label" for="email">Télephone  @error('telephone')
                                         <small class="text-danger">{{$message}}</small>
                                 @enderror <span class="text-danger" >*</span></label>
-                                    <input type="text " id="email" class="form-control" placeholder="0768365866" name="telephone" value="{{old('telephone')}}">
+                                    <input type="text " id="email" class="form-control" placeholder="+22507698365866" name="telephone" value="{{old('telephone')}}">
                                     <span class="fs-6">Permettra de vous contactez en urgence   </span>
                                   </div>
                                   <div class="mb-4 col-12 col-md-12">
-                                    <label class="form-label" for="phone">Whattsap Contact     @error('whattsapp')
+                                    <label class="form-label" for="phone"> Numero WhatsApp      @error('whattsapp')
                                         <small class="text-danger">{{$message}}</small>
                                 @enderror <span class="text-danger">*</span></label>
                                     <div class="input-group mb-1">
@@ -100,7 +100,7 @@
                                     <div class="form-check">
                                       <input class="form-check-input" type="checkbox" value="Oui" id="formId">
                                       <label class="form-check-label fs-6" for="formId">
-                                       Acceptez-vous les conditions d'utilisation de  SAS FORMATION
+                                       Acceptez-vous les conditions d'utilisation de VTP FORMATION
                                       </label>
                                     </div>
                                   </div>
@@ -125,14 +125,14 @@
                     <div class="mb-4">
                       <img src="../../assets/images/job/job-graphics.svg" alt="">
                     </div>
-                    <h3 class="mb-3">Nos Aprénants seront ravis de recevoir une nouvelle Competétence </h3>
+                    <h3 class="mb-3">Nous sommes heureux de  faire bénéficier une nouvelle compétence à nos apprenants </h3>
                     <ul class="list-unstyled text-dark mb-0">
                       <li class="d-flex align-items-start mb-3"><i class="mdi mdi-check-circle me-2 text-success"></i>
-                      Avec Nous vos revénus vous sont reversés automatiquement .</li>
+                        Monétisez votre savoir-faire en devenant formateur. .</li>
                       <li class="d-flex align-items-start mb-3"><i class="mdi mdi-check-circle me-2 text-success"></i>
-                        Vous pouvez avoir des missions en freelance.</li>
+                        Devenez le maître de votre succès financier en partageant votre expertise.</li>
                       <li class="d-flex align-items-start"><i class="mdi mdi-check-circle me-2 text-success"></i>
-                        Débuter une carriere sur Sas formation se fait en deux clic.</li>
+                        Transformez votre passion en profit en devenant formateur..</li>
                     </ul>
                   </div>
                 </div>

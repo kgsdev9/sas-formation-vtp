@@ -1,7 +1,6 @@
 @extends('layout.layout')
 @section('title', $course->title)
 @section('content')
-
 <main>
 	<section class="py-lg-13 py-8" style="background-color:#2f1192;">
 		<div class="container">

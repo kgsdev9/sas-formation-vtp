@@ -1,5 +1,5 @@
 @extends('layout.layout')
-
+@section('title', 'Formation par catégorie')
 @section('content')
 
 <main>

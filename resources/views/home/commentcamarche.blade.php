@@ -33,7 +33,7 @@
 
               <div class="mb-4">
                 <!-- blockquote -->
-                <h4 class="mb-3">NB</h4>
+                <h4 class="mb-3">A SAVOIR </h4>
                 <blockquote class="blockquote-left">
                   <p class="ms-3">
                     - Les prix des articles sont définis par les formateurs  et sont modifiable à tous moment.
@@ -46,10 +46,10 @@
               <div class="mb-3">
                 <!-- list -->
                 <ul class="list-group-numbered list-unstyled">
-                  <li>  Mettre en place un laboratoire pour les travaux dirigés.</li>
-                  <li>   Fournir un support de cours au client..</li>
-                  <li>Mettre en place un questionnaire noté pour s’assurer des acquis du client..</li>
-                  <li>Ténir une feuille de présence des participants à la formation ..</li>
+                  <li> 1- Mettre en place un laboratoire pour les travaux dirigés.</li>
+                  <li> 2- Fournir un support de cours au client..</li>
+                  <li> 3- Mettre en place un questionnaire noté pour s’assurer des acquis du client..</li>
+                  <li> 4- Ténir une feuille de présence des participants à la formation ..</li>
                 </ul>
               </div>
 
@@ -65,12 +65,41 @@
                 </div>
                 <div class="mb-8">
                   <!-- header level  -->
-                
+
                   <h2 class="fw-semibold">Politique de remboursement ?</h2>
                   <!-- para  -->
                   <p>
                     En cas de litige concernant une session, VTP-FORMATION se laisse le droit d’arbitré les différentes options de remboursement, si la cause est liée à l’expert chargé de l’accompagnement.
                   </p>
+
+
+                  <h2 class="fw-semibold">Encadrement des sessions d’accompagnement </h2>
+                  <!-- para  -->
+                  <p>
+                    Les clients en sessions ont la possibilité d’échanger avec les administrateurs de VTP-FORMATION à tous moment par mail sur l’adresse  <strong>vtp.sas.france@gmail.com</strong> en indiquant les informations nécessaires au programme suivie.
+                  </p>
+
+                  <h2 class="fw-semibold">Commission de la plateforme VTP-MARKET   </h2>
+                  <!-- para  -->
+                  <p>
+                    La commission est de 30% sur chaque transaction effectuée afin de maintenir le service de la plateforme.
+                  </p>
+
+                  <h2 class="fw-semibold">Informations importantes à retenir   </h2>
+                  <!-- para  -->
+                  <div class="mb-4">
+
+                    <blockquote class="blockquote-left">
+                      <p class="ms-3">
+                        - L’expert est habilité à déterminer l’horaire, et la plate-forme de discussion à utiliser pour administrer les cours.
+                      </p>
+
+                      <p class="ms-3">-  L’expert reçoit le paiement une fois la formation réalisée et  après consultation des retours des apprenants..</p>
+                      <p  class="ms-3">  En cas de formation non réalisée, les clients sont remboursés avec les frais de remboursement à leurs charges.</p>
+                    </blockquote>
+                  </div>
+
+
                 </div>
               </div>
             </div>

@@ -12,7 +12,6 @@
                         Explorez de nouvelles
                         <u class="text-warning"><span class="text-primary"> connaissances  </span></u>
                     </h1>
-
                     <p class="lead mb-4">Préparez-vous à maîtriser de nouvelles compétences et à ouvrir de nouvelles portes dans votre carrière  .</p>
                     <ul class="list-unstyled mb-5">
                         <li class="mb-2">
@@ -82,10 +81,10 @@
                             </h4>
                             <div class="d-flex align-items-center mb-5 lh-1">
                                 <div>
-                                    <span class="text-inherit fw-semibold">Cours disponibles 4.9</span>
+                                    <span class="text-inherit fw-semibold">Cours disponibles {{count($vcategory->courses)}}</span>
                                 </div>
                             </div>
-                            <a href="#!">
+                            <a href="{{route('course.category', $vcategory->id)}}">
                                 Consulter
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
@@ -97,10 +96,9 @@
                     </div>
                 </div>
                 @endforeach
-
                 <div class="col-xl-12 col-md-12 col-12">
                     <div class="mt-4">
-                        <a href="#!" class="btn btn-light-primary text-primary">Consulter plus</a>
+                        <a href="{{route('home.categorie')}}" class="btn btn-light-primary text-primary">Consulter plus</a>
                     </div>
                 </div>
             </div>
@@ -201,34 +199,23 @@
 
 
     <section class="pb-lg-14 pb-8 text-center">
-      <!-- row -->
       <div class="container">
         <div class="row">
-          <!-- col -->
           <div class="col-12">
             <div class="mb-6">
               <h2 class="mb-1 h1">Cours les plus populaires</h2>
               <p>Choissisez parmi nos meilleures formations
-
                 </p>
             </div>
           </div>
-
         </div>
         <div class="row">
           <div class="col-md-12">
-
-            <!-- Tab content -->
             <div class="tab-content" id="pills-tabContent">
-              <!-- tab content -->
               <div class="tab-pane fade show active" id="pills-development" role="tabpanel"
                 aria-labelledby="pills-development-tab">
-
-                <!-- row -->
-
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                     @foreach ($allCourse as  $value)
-
                     <div class="col">
                         <div class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden video-card-item position-relative">
                             <img src="{{ asset('courss/images/'.$value->image) }}" class="img-fluid" alt="#" loading="lazy" style="height:150px">
@@ -262,17 +249,9 @@
                             </div>
                         </div>
                     </div>
-
-
                   @endforeach
-
                 </div>
               </div>
-              <!-- tab content -->
-
-
-
-
             </div>
           </div>
         </div>
