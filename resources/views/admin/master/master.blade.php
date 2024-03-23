@@ -81,7 +81,7 @@
              </li>
              <!-- Nav item -->
              <li class="nav-item">
-                 <a class="nav-link   collapsed " href="{{route('admin.all.users')}}">
+                 <a class="nav-link   collapsed " href="#">
                      <i class="nav-icon fe fe-user me-2"></i>Annuaire  Utilisateurs
                  </a>
 

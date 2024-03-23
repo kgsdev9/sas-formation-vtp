@@ -6,16 +6,14 @@
 		<div class="row justify-content-center align-items-center">
 			<div class="col-lg-5">
 				<div class="h5 text-muted text-uppercase">
-					Connectez-vous  sur SAS FORMATION
-					<span class="text-primary">SAS formation</span>
+					Connectez-vous  sur VTP FORMATION
+
 				</div>
 				<div class="fw-bold display-5 py-2 text-black mb-2">
-					Inscrivez-vous avec les meilleurs professionnels
+					Prêt à passer à la vitesse supérieure dans votre développement professionnel ?
 				</div>
 				<p class="lead text-dark-50 mb-0">
-					Apprenez des professionnels experts et
-					<br>
-					Rejoignezla plus grande communauté en ligne pour les créatifs.
+					Connectez-vous dès maintenant et plongez dans le monde passionnant de la formation en ligne. Développez vos compétences, explorez de nouveaux horizons et atteignez vos objectifs avec nous. L'aventure commence dès que vous appuyez sur ce bouton de connexion !
 				</p>
 			</div>
 			<div class="col-lg-5">

@@ -6,16 +6,15 @@
 		<div class="row justify-content-center align-items-center">
 			<div class="col-lg-5">
 				<div class="h5 text-muted text-uppercase">
-					S'incrire sur SAS FORMATION
-					<span class="text-primary">SAS formation</span>
+					S'inscrire sur VTP-FORMATION
+
 				</div>
 				<div class="fw-bold display-5 py-2 text-black mb-2">
-					Inscrivez-vous avec les meilleurs professionnels
+					Inscrivez-vous afin de bénéficier de l'expérience de nos experts dans le métier que vous recherchez.
 				</div>
 				<p class="lead text-dark-50 mb-0">
-					Apprenez des professionnels experts et
-					<br>
-					Rejoignezla plus grande communauté en ligne pour les créatifs.
+                    Posez vos questions à des personnes susceptibles de vous répondre sans détour avec leurs expériences.
+
 				</p>
 			</div>
 			<div class="col-lg-5">
@@ -40,7 +39,7 @@
 									</p>
 								</div>
 							</a>
-							
+
 						</div>
 						<div class="d-flex align-items-center justify-content-between divide my-2">
 							<hr class="w-100">

@@ -57,7 +57,6 @@ Route::get('/processinPayment', [PaymentController::class , 'createNewPayment'])
 Route::get('/orders/user/liste', [HomeController::class, 'ordersListe'])->name('orders.users.liste');
 Route::get('/orders/{id}', [HomeController::class, 'detailCommande'])->name('orders.detail');
 
-
 Route::get('/tests', function() {
     return view('actions.sucessTeacher');
 });
@@ -91,3 +90,8 @@ Route::post('/process-payment', [PaymentController::class,'initialisePayment'])-
 // GoogleLoginController redirect and callback urls
 Route::get('/login/{google}', [AuthSocialController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/login/{google}/callback', [AuthSocialController::class, 'handleGoogleCallback']);
+
+
+Route::get('/comment-ca-marche', function() {
+    return view('home.commentcamarche');
+});
