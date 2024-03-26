@@ -2,7 +2,7 @@
 @section('title', $course->title)
 @section('content')
 <main>
-	<section class="py-lg-13 py-8" style="background-color:#2f1192;">
+	<section class="py-lg-13 py-8" style="background-color:#cfcfcf;">
 		<div class="container">
 			<!-- Page header -->
 			<div class="row align-items-center">
@@ -11,10 +11,7 @@
 						<h1 class="text-white ">
 							{{$course->title}}
 						</h1>
-
-
-                        <p class="text-white p-2 text-center">  {{$course->description}}</p>
-
+                        <p class="text-white p-2 text-center">{!!$course->description!!}</p>
 					</div>
 				</div>
 			</div>

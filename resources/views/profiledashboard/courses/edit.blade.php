@@ -87,18 +87,7 @@
                             <!-- text -->
                           </div>
 
-                          <div class="mb-4 col-12 col-md-12">
-                            <!-- label -->
-                            <label class="form-label" for="phone">Demo de la formation  @error('url_video')
-                                <small class="text-danger">{{$message}}</small>
 
-                             @enderror</label>
-                            <!-- input group -->
-                            <div class="input-group mb-1">
-                               <input type="text" class="form-control" name="url_video"  value="{{$course->url_video}}">
-                            </div>
-
-                          </div>
 
                         <div class="mb-4 col-12 col-md-12">
                           <!-- radio -->
@@ -113,13 +102,29 @@
                           <span class="fs-6">Upoader une image qui permettra de décrire la formation  </span>
                         </div>
 
+
+                        <div class="mb-4 col-12 col-md-12">
+                            <!-- label -->
+                            <label class="form-label" for="phone">Description minimum de la formation   @error('url_video')
+                                <small class="text-danger">{{$message}}</small>
+
+                             @enderror</label>
+                            <!-- input group -->
+                            <div class="input-group mb-1">
+                             
+                               <input type="text" class="form-control" name="url_video" value="{{$course->url_video}}" max="150">
+                            </div>
+
+                          </div>
+
                         <div class="mb-4 col-12 col-md-12">
                           <!-- label -->
                           <label class="form-label" for="lname">Décrivez  briévement la formation  @error('description')
                             <span class="text-danger">{{$message}}</span>
                           @enderror  </label>
                           <!-- input -->
-                            <textarea name="description" class="form-control" id="" cols="30" rows="5"> {{$course->description}} </textarea>
+
+                            <textarea name="description" class="form-control"  id="editor" cols="30" rows="5">{{$course->description}} </textarea>
                         </div>
 
 

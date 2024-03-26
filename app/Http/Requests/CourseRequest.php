@@ -26,7 +26,7 @@ class CourseRequest extends FormRequest
         // 'slug' => 'required|regex:/^[0-9a-z\-]+$/',
         'description' => 'required|string',
         'prix' => 'required|numeric',
-        'url_video' => 'required|url',
+        'url_video' => 'required',
         'image' => 'required|mimes:png,jpg,jpeg',
         'level_id' => 'required|exists:levels,id',
         'category_id' => 'required|exists:categories,id',

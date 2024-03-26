@@ -228,7 +228,7 @@
                                     Publié par {{ $value->formateur->fullname }}
                                 </p>
                                 <div class="card-text text-muted small">
-                                    {{ Str::limit($value->description, 100) }}
+                                    {{ Str::limit($value->url_video, 100) }}
                                 </div>
 
                             </div>

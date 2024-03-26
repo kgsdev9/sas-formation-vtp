@@ -15,7 +15,7 @@
     <link rel="canonical" href="vtp-market.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700">
     <title>@yield('title')</title>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
   </head>
 <body class="bg-white" style="font-family: 'Inter', sans-serif;">
 
@@ -149,6 +149,13 @@
   <script src="{{asset('assets/js/theme.min.js')}}"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 </footer>
 </body>
 </html>
